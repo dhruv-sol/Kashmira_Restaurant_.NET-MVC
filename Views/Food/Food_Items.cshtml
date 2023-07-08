@@ -1,0 +1,32 @@
+﻿@using Kashmira_Restaurant.Models
+@model List<TBLFood>
+@{
+    ViewBag.Title = "Dish List For Food Items";
+ }
+
+
+<table border="1">
+    <tr>
+        <th>ID_PK</th>
+        <th>Dish Name</th>
+        <th>Cuisine</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (TBLFood dr in Model)
+    {
+        <tr>
+            <td>@dr.ID_PK</td>
+            <td>@dr.DishName</td>
+            <td>@dr.Cuisine</td>
+            <td>@dr.Price</td>
+            <td>@dr.Discount</td>
+            <td>@Html.ActionLink("Update Dish", "Update_Food_Items", "Food", new { id = dr.ID_PK }, new { style = "color:#6699bb" })</td>
+            <td>@Html.ActionLink("Delete Dish", "Delete", "Food", new { id = dr.ID_PK }, new { style = "color:#bb9966" })</td>
+
+        </tr>
+    }
+</table>
+

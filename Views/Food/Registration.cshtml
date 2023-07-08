@@ -1,0 +1,17 @@
+﻿@using Kashmira_Restaurant.Models
+@model TBLUser
+@{
+    ViewBag.Title = "Registration";
+}
+
+<div align="center">
+    @using (Html.BeginForm("Registration", "Food", FormMethod.Post))
+    {
+        <br /><br />
+        <label>UserName:</label>
+        @Html.TextBoxFor(a => a.UserName)
+        <label>Password:</label>
+        @Html.PasswordFor(a => a.Password)
+        <input type="submit" value="Register" />
+    }
+</div>

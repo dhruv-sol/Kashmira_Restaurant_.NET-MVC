@@ -1,0 +1,24 @@
+﻿@using Kashmira_Restaurant.Models
+@model TBLFood
+@{
+    ViewBag.Title = "Insert Dish Specifications";
+}
+
+<div align="center">
+    @using (Html.BeginForm("Insert", "Food", FormMethod.Post))
+    {
+        <br /><br />
+
+        <label> Dish Name:</label>
+        @Html.TextBoxFor(a => a.DishName)
+
+        <label> Cuisine:</label>
+        @Html.TextBoxFor(a => a.Cuisine)
+
+        <label> Price:</label>
+        @Html.TextBoxFor(a => a.Price)
+
+        <input type="submit" />
+
+    }
+</div>

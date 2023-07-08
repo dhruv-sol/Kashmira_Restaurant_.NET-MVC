@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insert</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="MyHeader">
+        <h1>@ViewBag.Title</h1>
+        @if (ViewBag.Title == "Dish List For Food Items")
+        {
+            <h1>Welcome @Session["user"]</h1>
+        }
+
+        @if (ViewBag.Title != "Login" && ViewBag.Title != "Registration")
+        {
+            <div class="menulinks">
+                @Html.ActionLink("Insert Dish", "Insert_Food_Items", "Food", null, null)
+                <br /><br />
+                @Html.ActionLink("Dish List", "Food_Items", "Food", null, null)
+
+            </div>
+        }<br /><br />
+
+    </div>
+
+    <div class="main-container">
+        @RenderBody()
+
+    </div>
+    <br /><br />
+    @if (ViewBag.Title != "Login")
+    {
+        <div align="center">
+            @using (Html.BeginForm("Login", "Food", FormMethod.Get))
+            {
+                <input type="submit" value="Home" />
+            }
+        </div>
+        <br /><br />
+    }
+
+    <div class="footer">
+
+    </div>
+</body>
+</html>
